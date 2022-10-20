@@ -1,0 +1,26 @@
+pipeline{
+  agent {
+        node
+       {
+       label ''
+    }
+    
+} 
+stages{
+
+    stage('vcs')
+{
+    steps{
+        git url:'https://github.com/Praveen-711/dotnet-banking-app.git',
+        branch:'master'
+    }
+
+}
+stage('build'){
+    steps{
+        sh 'dotnet build'
+        sh 'dotnet publish'
+    }
+}
+}
+}
