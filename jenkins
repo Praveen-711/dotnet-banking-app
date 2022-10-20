@@ -18,8 +18,8 @@ stages{
 }
 stage('build'){
     steps{
-        sh 'dotnet build'
-        sh 'dotnet publish'
+        sh "dotnet build"
+        sh "dotnet publish"
     }
 }
 }
